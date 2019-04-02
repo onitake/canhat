@@ -44,7 +44,9 @@ If the Raspberry Pi is the last node in a chain, attach a 120Ω termination
 resistor to the unused terminal.
 
 An ID EEPROM is also built in, containing information according to the
-[HAT ID EEPROM Specification], including a Device Tree blob.
+[HAT ID EEPROM Specification], including a Device Tree blob. This EEPROM
+can be programmed in the field by shorting the jumper JP1 and flashing
+with the help of the [eepromutils].
 
 ## Compatibility
 
@@ -74,6 +76,7 @@ but lower speeds will work fine.
 [Micro HAT Specification]: https://github.com/raspberrypi/hats/blob/master/uhat-board-mechanical.pdf
 [HAT ID EEPROM Specification]: https://github.com/raspberrypi/hats/blob/master/eeprom-format.md
 [CAN bus on raspberry pi quick guide]: https://www.raspberrypi.org/forums/viewtopic.php?t=141052
+[eepromutils]: https://github.com/raspberrypi/hats/tree/master/eepromutils
 
 ### Data Sheets
 
