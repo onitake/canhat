@@ -1,13 +1,14 @@
 EESchema Schematic File Version 4
+LIBS:canhat-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
+Title "CAN HAT"
+Date "2019-04-02"
+Rev "1"
+Comp "© 2019 Gregor Riepl"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -356,101 +357,67 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J2
 U 1 1 5CA2AC48
-P 9100 3200
-F 0 "J2" H 9179 3192 50  0000 L CNN
-F 1 "CAN In" H 9179 3101 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9100 3200 50  0001 C CNN
-F 3 "~" H 9100 3200 50  0001 C CNN
-	1    9100 3200
+P 9450 3200
+F 0 "J2" H 9529 3192 50  0000 L CNN
+F 1 "CAN In" H 9529 3101 50  0000 L CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9450 3200 50  0001 C CNN
+F 3 "~" H 9450 3200 50  0001 C CNN
+	1    9450 3200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J3
 U 1 1 5CA2B324
-P 9100 3600
-F 0 "J3" H 9179 3592 50  0000 L CNN
-F 1 "CAN Out" H 9179 3501 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9100 3600 50  0001 C CNN
-F 3 "~" H 9100 3600 50  0001 C CNN
-	1    9100 3600
+P 9450 3500
+F 0 "J3" H 9529 3492 50  0000 L CNN
+F 1 "CAN Out" H 9529 3401 50  0000 L CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9450 3500 50  0001 C CNN
+F 3 "~" H 9450 3500 50  0001 C CNN
+	1    9450 3500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8900 3200 8600 3200
-Wire Wire Line
-	8600 3200 8600 3300
-Wire Wire Line
-	8600 3300 8700 3300
-Wire Wire Line
-	8700 3300 8700 3600
-Wire Wire Line
-	8700 3600 8900 3600
-Connection ~ 8600 3300
-Wire Wire Line
-	8600 3500 8600 3700
-Wire Wire Line
-	8600 3700 8900 3700
-Wire Wire Line
-	8600 3500 8800 3500
-Wire Wire Line
-	8800 3500 8800 3300
-Wire Wire Line
-	8800 3300 8900 3300
-Connection ~ 8600 3500
-Wire Wire Line
-	7100 3200 7100 3250
-Wire Wire Line
-	7100 3250 7600 3250
-Wire Wire Line
-	7600 3250 7600 3300
-Wire Wire Line
-	7100 3300 7400 3300
-Wire Wire Line
-	7400 3300 7400 3200
-Wire Wire Line
-	7400 3200 7600 3200
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5CA2E828
-P 4600 2500
-F 0 "H1" H 4700 2546 50  0000 L CNN
-F 1 "NW" H 4700 2455 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm" H 4600 2500 50  0001 C CNN
-F 3 "~" H 4600 2500 50  0001 C CNN
-	1    4600 2500
+P 8650 5200
+F 0 "H1" H 8750 5246 50  0000 L CNN
+F 1 "NW" H 8750 5155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm" H 8650 5200 50  0001 C CNN
+F 3 "~" H 8650 5200 50  0001 C CNN
+	1    8650 5200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H3
 U 1 1 5CA2E89E
-P 4900 2500
-F 0 "H3" H 5000 2546 50  0000 L CNN
-F 1 "NE" H 5000 2455 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm" H 4900 2500 50  0001 C CNN
-F 3 "~" H 4900 2500 50  0001 C CNN
-	1    4900 2500
+P 8950 5200
+F 0 "H3" H 9050 5246 50  0000 L CNN
+F 1 "NE" H 9050 5155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm" H 8950 5200 50  0001 C CNN
+F 3 "~" H 8950 5200 50  0001 C CNN
+	1    8950 5200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5CA2E8D0
-P 4600 2700
-F 0 "H2" H 4700 2746 50  0000 L CNN
-F 1 "SW" H 4700 2655 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm" H 4600 2700 50  0001 C CNN
-F 3 "~" H 4600 2700 50  0001 C CNN
-	1    4600 2700
+P 8650 5400
+F 0 "H2" H 8750 5446 50  0000 L CNN
+F 1 "SW" H 8750 5355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm" H 8650 5400 50  0001 C CNN
+F 3 "~" H 8650 5400 50  0001 C CNN
+	1    8650 5400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H4
 U 1 1 5CA2E904
-P 4900 2700
-F 0 "H4" H 5000 2746 50  0000 L CNN
-F 1 "SE" H 5000 2655 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm" H 4900 2700 50  0001 C CNN
-F 3 "~" H 4900 2700 50  0001 C CNN
-	1    4900 2700
+P 8950 5400
+F 0 "H4" H 9050 5446 50  0000 L CNN
+F 1 "SE" H 9050 5355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm" H 8950 5400 50  0001 C CNN
+F 3 "~" H 8950 5400 50  0001 C CNN
+	1    8950 5400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -467,49 +434,35 @@ $EndComp
 $Comp
 L Device:R R2
 U 1 1 5CA2F18E
-P 8100 2200
-F 0 "R2" V 8307 2200 50  0000 C CNN
-F 1 "10k" V 8216 2200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8030 2200 50  0001 C CNN
-F 3 "~" H 8100 2200 50  0001 C CNN
-	1    8100 2200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+3V3 #PWR07
-U 1 1 5CA2F1FE
-P 8250 2200
-F 0 "#PWR07" H 8250 2050 50  0001 C CNN
-F 1 "+3V3" V 8265 2328 50  0000 L CNN
-F 2 "" H 8250 2200 50  0001 C CNN
-F 3 "" H 8250 2200 50  0001 C CNN
-	1    8250 2200
-	0    1    1    0   
+P 8050 1750
+F 0 "R2" V 8257 1750 50  0000 C CNN
+F 1 "10k" V 8166 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7980 1750 50  0001 C CNN
+F 3 "~" H 8050 1750 50  0001 C CNN
+	1    8050 1750
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Jumper_NO_Small JP1
 U 1 1 5CA2F52A
-P 7850 2300
-F 0 "JP1" V 7804 2348 50  0000 L CNN
-F 1 "Write Enable" V 7895 2348 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7850 2300 50  0001 C CNN
-F 3 "~" H 7850 2300 50  0001 C CNN
-	1    7850 2300
+P 8050 2300
+F 0 "JP1" V 8004 2348 50  0000 L CNN
+F 1 "Write Enable" V 8095 2348 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8050 2300 50  0001 C CNN
+F 3 "~" H 8050 2300 50  0001 C CNN
+	1    8050 2300
 	0    1    1    0   
 $EndComp
-Text Label 7750 2100 0    50   ~ 0
+Text Label 8450 2100 0    50   ~ 0
 ID_SC
-Text Label 7750 2000 0    50   ~ 0
+Text Label 8450 2000 0    50   ~ 0
 ID_SD
 Text Label 4000 3200 0    50   ~ 0
 ID_SD
 Text Label 4000 3300 0    50   ~ 0
 ID_SC
 Wire Wire Line
-	7750 2200 7850 2200
-Connection ~ 7850 2200
-Wire Wire Line
-	7850 2200 7950 2200
+	8050 2200 8050 1900
 $Comp
 L power:GND #PWR03
 U 1 1 5CA2FD93
@@ -524,12 +477,12 @@ $EndComp
 $Comp
 L power:GND #PWR04
 U 1 1 5CA2FDC6
-P 7850 2400
-F 0 "#PWR04" H 7850 2150 50  0001 C CNN
-F 1 "GND" H 7855 2227 50  0000 C CNN
-F 2 "" H 7850 2400 50  0001 C CNN
-F 3 "" H 7850 2400 50  0001 C CNN
-	1    7850 2400
+P 8050 2400
+F 0 "#PWR04" H 8050 2150 50  0001 C CNN
+F 1 "GND" H 8055 2227 50  0000 C CNN
+F 2 "" H 8050 2400 50  0001 C CNN
+F 3 "" H 8050 2400 50  0001 C CNN
+	1    8050 2400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -593,4 +546,89 @@ F 3 "" H 7350 1800 50  0001 C CNN
 	1    7350 1800
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R R3
+U 1 1 5CA302D1
+P 7750 1750
+F 0 "R3" V 7957 1750 50  0000 C CNN
+F 1 "3k9" V 7866 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7680 1750 50  0001 C CNN
+F 3 "~" H 7750 1750 50  0001 C CNN
+	1    7750 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5CA30AE7
+P 8350 1750
+F 0 "R4" V 8557 1750 50  0000 C CNN
+F 1 "3k9" V 8466 1750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8280 1750 50  0001 C CNN
+F 3 "~" H 8350 1750 50  0001 C CNN
+	1    8350 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 2000 7750 1900
+Wire Wire Line
+	7750 2100 8350 2100
+Wire Wire Line
+	8350 2100 8350 1900
+Wire Wire Line
+	7750 2000 8450 2000
+Connection ~ 7750 2000
+Wire Wire Line
+	8350 2100 8450 2100
+Connection ~ 8350 2100
+$Comp
+L power:+3V3 #PWR08
+U 1 1 5CA33262
+P 7750 1600
+F 0 "#PWR08" H 7750 1450 50  0001 C CNN
+F 1 "+3V3" V 7765 1728 50  0000 L CNN
+F 2 "" H 7750 1600 50  0001 C CNN
+F 3 "" H 7750 1600 50  0001 C CNN
+	1    7750 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 1600 8050 1600
+Connection ~ 7750 1600
+Connection ~ 8050 1600
+Wire Wire Line
+	8050 1600 8350 1600
+Connection ~ 8050 2200
+Wire Wire Line
+	7750 2200 8050 2200
+$Comp
+L Graphic:Logo_Open_Hardware_Small OSHW1
+U 1 1 5CA3B81F
+P 9600 5300
+F 0 "OSHW1" H 9600 5575 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 9600 5075 50  0001 C CNN
+F 2 "Symbol:OSHW-Logo_5.7x6mm_SilkScreen" H 9600 5300 50  0001 C CNN
+F 3 "~" H 9600 5300 50  0001 C CNN
+	1    9600 5300
+	1    0    0    -1  
+$EndComp
+Text Label 7100 3200 0    50   ~ 0
+RX
+Text Label 7600 3300 2    50   ~ 0
+RX
+Text Label 7600 3200 2    50   ~ 0
+TX
+Text Label 7100 3300 0    50   ~ 0
+TX
+Text Label 8600 3300 0    50   ~ 0
+CAN_P
+Text Label 8600 3500 0    50   ~ 0
+CAN_N
+Text Label 9250 3200 2    50   ~ 0
+CAN_P
+Text Label 9250 3500 2    50   ~ 0
+CAN_P
+Text Label 9250 3300 2    50   ~ 0
+CAN_N
+Text Label 9250 3600 2    50   ~ 0
+CAN_N
 $EndSCHEMATC
