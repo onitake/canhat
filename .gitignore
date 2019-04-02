@@ -2,3 +2,6 @@
 *-bak
 *.net
 *.pdf
+*.dtbo
+*.eep
+hats/
