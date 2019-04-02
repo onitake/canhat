@@ -10,6 +10,8 @@ This little board extends the Raspberry Pi with a CAN interface.
 
 The board layout is built according to the [Micro HAT specification].
 
+Additionally, the complete [Add-On Boards and HATs] specs apply.
+
 ### Electronics
 
 Only standard components from Microchip Semiconductor were used, these can be
@@ -68,11 +70,10 @@ but lower speeds will work fine.
 
 ## Links
 
-### References
-
-[Micro HAT specification]: https://github.com/raspberrypi/hats
-[CAN bus on raspberry pi quick guide]: https://www.raspberrypi.org/forums/viewtopic.php?t=141052
+[Add-On Boards and HATs]: https://github.com/raspberrypi/hats
+[Micro HAT Specification]: https://github.com/raspberrypi/hats/blob/master/uhat-board-mechanical.pdf
 [HAT ID EEPROM Specification]: https://github.com/raspberrypi/hats/blob/master/eeprom-format.md
+[CAN bus on raspberry pi quick guide]: https://www.raspberrypi.org/forums/viewtopic.php?t=141052
 
 ### Data Sheets
 
