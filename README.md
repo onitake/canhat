@@ -77,9 +77,9 @@ but lower speeds will work fine.
 
 ### Data Sheets
 
-[Microchip MCP2515 CAN Interface Controller](https://www.microchip.com/wwwproducts/en/en010406)
-[Microchip MCP2551 High-Speed CAN Transceiver](https://www.microchip.com/wwwproducts/en/MCP2551)
-[Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
+* [Microchip MCP2515 CAN Interface Controller](https://www.microchip.com/wwwproducts/en/en010406)
+* [Microchip MCP2551 High-Speed CAN Transceiver](https://www.microchip.com/wwwproducts/en/MCP2551)
+* [Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
 
 ## Copyright
 
