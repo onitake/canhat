@@ -48,13 +48,25 @@ An ID EEPROM is also built in, containing information according to the
 can be programmed in the field by shorting the jumper JP1 and flashing
 with the help of the [eepromutils].
 
+The provided Makefile will compile a DeviceTree overlay and device descriptor
+into an EEPROM image. To build the image, type:
+
+    make
+
+To flash the image to the attached EEPROM, type:
+
+    make flash
+
+You might need to run this as root.
+
+After the device descriptor is flashed, you can disconnect JP1 and reboot.
+The CAN bus should then appear as network device `can0`.
+
 ## Compatibility
 
 The HAT is fully compatible with the Linux drivers for the MCP2551.
 Refer to the [CAN bus on raspberry pi quick guide] for more information
 on how to configure the device manually.
-
-:warning: **Work in progress**
 
 This is a full-featured HAT and supports automatic configuration via
 the built-in ID EEPROM.
