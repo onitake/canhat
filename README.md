@@ -95,14 +95,12 @@ but lower speeds will work fine too.
 
 ## Links
 
-### Specifications and Application Notes
-
-* [Add-On Boards and HATs](https://github.com/raspberrypi/hats)
-* [Micro HAT Specification](https://github.com/raspberrypi/hats/blob/master/uhat-board-mechanical.pdf)
-* [HAT ID EEPROM Specification](https://github.com/raspberrypi/hats/blob/master/eeprom-format.md)
-* [CAN bus on raspberry pi quick guide](https://www.raspberrypi.org/forums/viewtopic.php?t=141052)
-* [eepromutils](https://github.com/raspberrypi/hats/tree/master/eepromutils)
-* [Overview of 3.3V CAN Transceivers](http://www.ti.com/lit/an/slla337/slla337.pdf)
+[Add-On Boards and HATs]: https://github.com/raspberrypi/hats
+[Micro HAT Specification]: https://github.com/raspberrypi/hats/blob/master/uhat-board-mechanical.pdf
+[HAT ID EEPROM Specification]: https://github.com/raspberrypi/hats/blob/master/eeprom-format.md
+[CAN bus on raspberry pi quick guide]: https://www.raspberrypi.org/forums/viewtopic.php?t=141052
+[eepromutils]: https://github.com/raspberrypi/hats/tree/master/eepromutils
+[Overview of 3.3V CAN Transceivers]: http://www.ti.com/lit/an/slla337/slla337.pdf
 
 ### Data Sheets
 
