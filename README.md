@@ -20,8 +20,8 @@ connectors, or make sure the cables are firmly attached.
 
 ### Electronics
 
-The circuit is built around the [Microchip MCP2515 CAN Interface Controller],
-but uses a [Texas Instruments 3.3 V CAN Transceiver] to allow for full
+The circuit is built around the Microchip MCP2515 CAN Interface Controller,
+but uses a Texas Instruments SN65HVD234 3.3 V CAN Transceiver to allow for full
 3.3V operation. While driving the CAN bus with 3.3V instead of the usual 5V
 will work fine, connecting 5V parts to the MCP2515 may damage it, as it can
 only handle logic levels about 1V above supply voltage.
@@ -105,7 +105,7 @@ but lower speeds will work fine too.
 ### Data Sheets
 
 * [Microchip MCP2515 CAN Interface Controller](https://www.microchip.com/wwwproducts/en/en010406)
-* [Texas Instruments 3.3 V CAN Transceiver](http://www.ti.com/product/SN65HVD234)
+* [Texas Instruments SN65HVD234 3.3 V CAN Transceiver](http://www.ti.com/product/SN65HVD234)
 * [Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
 
 ## Copyright
