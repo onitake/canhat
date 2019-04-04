@@ -5,8 +5,8 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "CAN HAT"
-Date "2019-04-02"
+Title "CAN HAT for Raspberry Pi"
+Date "2019-04-05"
 Rev "1"
 Comp "© 2019 Gregor Riepl"
 Comment1 ""
