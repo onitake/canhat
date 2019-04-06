@@ -5,3 +5,5 @@
 *.dtbo
 *.eep
 hats/
+plot/
+*.png
