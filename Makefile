@@ -18,7 +18,7 @@ FLASHBUS := 0
 # Refer to the EEPROM data sheet for details.
 # The circuit pulls A2..A0 to ground, which sets bits 3..1 of the device
 # address to 0. Bit 0 is the read/write bit.
-FLASHADDRESS := a0
+FLASHADDRESS := 50
 
 .PHONY: all clean flash
 
