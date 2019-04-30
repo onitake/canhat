@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
-Date "2019-04-05"
-Rev "1"
+Date "2019-04-29"
+Rev "2"
 Comp "© 2019 Gregor Riepl"
 Comment1 ""
 Comment2 ""
@@ -280,28 +280,6 @@ F 3 "" H 7400 4400 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J2
-U 1 1 5CA2AC48
-P 9450 3200
-F 0 "J2" H 9529 3192 50  0000 L CNN
-F 1 "CAN In" H 9529 3101 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9450 3200 50  0001 C CNN
-F 3 "~" H 9450 3200 50  0001 C CNN
-	1    9450 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J3
-U 1 1 5CA2B324
-P 9450 3500
-F 0 "J3" H 9529 3492 50  0000 L CNN
-F 1 "CAN Out" H 9529 3401 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 9450 3500 50  0001 C CNN
-F 3 "~" H 9450 3500 50  0001 C CNN
-	1    9450 3500
-	1    0    0    -1  
-$EndComp
-$Comp
 L Mechanical:MountingHole H1
 U 1 1 5CA2E828
 P 8650 5200
@@ -526,13 +504,13 @@ Text Label 8400 3300 0    50   ~ 0
 CAN_P
 Text Label 8400 3400 0    50   ~ 0
 CAN_N
-Text Label 9250 3200 2    50   ~ 0
+Text Label 9950 3150 2    50   ~ 0
 CAN_P
-Text Label 9250 3500 2    50   ~ 0
+Text Label 9950 3450 2    50   ~ 0
 CAN_P
-Text Label 9250 3300 2    50   ~ 0
+Text Label 9950 3250 2    50   ~ 0
 CAN_N
-Text Label 9250 3600 2    50   ~ 0
+Text Label 9950 3350 2    50   ~ 0
 CAN_N
 $Comp
 L Interface_CAN_LIN:SN65HVD234 U2
@@ -588,6 +566,17 @@ F 1 "GND" H 7605 3627 50  0000 C CNN
 F 2 "" H 7600 3800 50  0001 C CNN
 F 3 "" H 7600 3800 50  0001 C CNN
 	1    7600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J2
+U 1 1 5CC6B3E9
+P 10150 3250
+F 0 "J2" H 10230 3242 50  0000 L CNN
+F 1 "CAN In / Out" H 10230 3151 50  0000 L CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 10150 3250 50  0001 C CNN
+F 3 "~" H 10150 3250 50  0001 C CNN
+	1    10150 3250
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
