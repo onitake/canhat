@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
-Date "2019-04-29"
+Date "2019-05-01"
 Rev "2"
 Comp "© 2019 Gregor Riepl"
 Comment1 ""
@@ -75,7 +75,7 @@ U 1 1 5CA27EFE
 P 5400 4050
 F 0 "Y1" V 5446 3919 50  0000 R CNN
 F 1 "16MHz" V 5355 3919 50  0000 R CNN
-F 2 "Crystal:Crystal_SMD_HC49-SD_HandSoldering" H 5400 4050 50  0001 C CNN
+F 2 "Crystal:Crystal_SMD_HC49-SD" H 5400 4050 50  0001 C CNN
 F 3 "~" H 5400 4050 50  0001 C CNN
 	1    5400 4050
 	0    -1   -1   0   
@@ -235,7 +235,7 @@ U 1 1 5CA29432
 P 6150 5350
 F 0 "C3" H 6268 5396 50  0000 L CNN
 F 1 "10u" H 6268 5305 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 6188 5200 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_Pad2.25x2.55mm_HandSolder" H 6188 5200 50  0001 C CNN
 F 3 "~" H 6150 5350 50  0001 C CNN
 	1    6150 5350
 	1    0    0    -1  
@@ -504,13 +504,13 @@ Text Label 8400 3300 0    50   ~ 0
 CAN_P
 Text Label 8400 3400 0    50   ~ 0
 CAN_N
-Text Label 9950 3150 2    50   ~ 0
+Text Label 9250 3150 2    50   ~ 0
 CAN_P
-Text Label 9950 3450 2    50   ~ 0
+Text Label 9250 3450 2    50   ~ 0
 CAN_P
-Text Label 9950 3250 2    50   ~ 0
+Text Label 9250 3250 2    50   ~ 0
 CAN_N
-Text Label 9950 3350 2    50   ~ 0
+Text Label 9250 3350 2    50   ~ 0
 CAN_N
 $Comp
 L Interface_CAN_LIN:SN65HVD234 U2
@@ -571,12 +571,78 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x04 J2
 U 1 1 5CC6B3E9
-P 10150 3250
-F 0 "J2" H 10230 3242 50  0000 L CNN
-F 1 "CAN In / Out" H 10230 3151 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 10150 3250 50  0001 C CNN
-F 3 "~" H 10150 3250 50  0001 C CNN
-	1    10150 3250
+P 9450 3250
+F 0 "J2" H 9530 3242 50  0000 L CNN
+F 1 "CAN In / Out" H 9530 3151 50  0000 L CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 9450 3250 50  0001 C CNN
+F 3 "~" H 9450 3250 50  0001 C CNN
+	1    9450 3250
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5CC8D2CE
+P 5300 5200
+F 0 "J3" H 5220 4875 50  0000 C CNN
+F 1 "5V" H 5220 4966 50  0000 C CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 5300 5200 50  0001 C CNN
+F 3 "~" H 5300 5200 50  0001 C CNN
+	1    5300 5200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0111
+U 1 1 5CC8D443
+P 3000 2800
+F 0 "#PWR0111" H 3000 2650 50  0001 C CNN
+F 1 "+5V" H 3015 2973 50  0000 C CNN
+F 2 "" H 3000 2800 50  0001 C CNN
+F 3 "" H 3000 2800 50  0001 C CNN
+	1    3000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 2800 3000 2800
+Connection ~ 3000 2800
+$Comp
+L power:+5V #PWR0112
+U 1 1 5CC8D96C
+P 5750 5200
+F 0 "#PWR0112" H 5750 5050 50  0001 C CNN
+F 1 "+5V" H 5765 5373 50  0000 C CNN
+F 2 "" H 5750 5200 50  0001 C CNN
+F 3 "" H 5750 5200 50  0001 C CNN
+	1    5750 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C5
+U 1 1 5CC8DA64
+P 5750 5350
+F 0 "C5" H 5868 5396 50  0000 L CNN
+F 1 "10u" H 5868 5305 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_Pad2.25x2.55mm_HandSolder" H 5788 5200 50  0001 C CNN
+F 3 "~" H 5750 5350 50  0001 C CNN
+	1    5750 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 5CC8DAAA
+P 5750 5500
+F 0 "#PWR0114" H 5750 5250 50  0001 C CNN
+F 1 "GND" H 5755 5327 50  0000 C CNN
+F 2 "" H 5750 5500 50  0001 C CNN
+F 3 "" H 5750 5500 50  0001 C CNN
+	1    5750 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 5200 5750 5200
+Connection ~ 5750 5200
+Wire Wire Line
+	5500 5500 5750 5500
+Connection ~ 5750 5500
+Wire Wire Line
+	5500 5300 5500 5500
 $EndSCHEMATC
