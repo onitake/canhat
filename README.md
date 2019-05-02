@@ -1,46 +1,53 @@
 # CAN HAT for Raspberry Pi 2/3+
 
-Look! A hat!
+Look! A hat! :tophat:
 
-This little board extends the Raspberry Pi with a CAN interface.
+This little board extends the Raspberry Pi with a CAN interface and screw
+terminals for external 5V power.
 
 ## Specifications
 
 ### Mechanical
 
-The board outline and component placement conform to the [Micro HAT specification].
+The board outline and component placement conform to the [Micro HAT specification]
+and the [Add-On Boards and HATs] specification.
 
-Additionally, the complete [Add-On Boards and HATs] specs apply.
+Instead of the usual DB9 connector found on many boards, this one has
+screw terminals for easier wiring and a smaller footprint.
 
-Instead of the usual DB9 connector found on many boards, this one has two
-screw terminals, for easier wiring and a smaller footprint. The disadvantage
-of this is less mechanical stability. If you intend to adopt the CAN HAT
-in an industrial environment, replace the screw terminals with more robust
-connectors, or make sure the cables are firmly attached.
+If you intend to adopt the CAN HAT in an industrial environment, replace the
+screw terminals with more robust connectors, or make sure the wires are firmly
+attached. You should also screw HAT and Raspberry Pi together using spacers and
+M2.5 screws.
 
 ### Electronics
 
 The circuit is built around the Microchip MCP2515 CAN Interface Controller,
 but uses a Texas Instruments SN65HVD234 3.3 V CAN Transceiver to allow for full
 3.3V operation. While driving the CAN bus with 3.3V instead of the usual 5V
-will work fine, connecting 5V parts to the MCP2515 may damage it, as it can
+will work fine, connecting 5V parts to the MCP2515 may cause damage, as it can
 only handle logic levels about 1V above supply voltage.
 
 See [Overview of 3.3V CAN Transceivers] for more information on 3.3V operation.
 
 The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
-To allow for higher speeds on the CAN bus, tuned microstrips were used to
-connect the CAN components on the PCB. The differential impedance is matched
-to 120Ω.
+To reduce interference on the CAN bus, tuned microstrips were used to
+connect the CAN transceiver to the terminals on the PCB. The differential
+impedance is matched to 120Ω.
 
 Aside from the CAN part, an additional ID EEPROM was added to conform to
-the HAT specification.
-
-The filter capacitor C3 is optional, but recommended.
+the HAT specification. JP1 is only needed to program the EEPROM - for a
+smaller PCB footprint, the pads can also be connected by other means.
+The connection can be removed after the EEPROM has been programmed.
 
 R5 controls the slop of the signals on the CAN bus. A 0Ω resistor should be
 soldered for maximum performance.
+
+The filter capacitor C3 is optional, but recommended.
+
+C5 and J3 are intended to supply 5V power to the Raspberry Pi. They can be
+left out if the Raspberry Pi is powered via USB.
 
 ## Cabling and Termination
 
@@ -58,7 +65,7 @@ The built-in ID EEPROM contains device information according to the
 automatic configuration when Linux boots.
 
 The EEPROM can be programmed in the field by shorting the jumper JP1 and
-flashing with the help of the [eepromutils].
+flashing with the help of [eepromutils].
 
 The provided Makefile will compile a DeviceTree overlay and the device descriptor
 into an EEPROM image. To build the image, type:
