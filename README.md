@@ -24,13 +24,20 @@ M2.5 screws.
 
 ### Electronics
 
-The circuit is built around the Microchip MCP2515 CAN Interface Controller,
-but uses a Texas Instruments SN65HVD234 3.3 V CAN Transceiver to allow for full
-3.3V operation. While driving the CAN bus with 3.3V instead of the usual 5V
-will work fine, connecting 5V parts to the MCP2515 may cause damage, as it can
-only handle logic levels about 1V above supply voltage.
+The circuit is built around the Microchip MCP2515 CAN Interface Controller
+and a CAN transceiver IC. It is possible to use both 3.3V and 5V transceivers,
+provided that that logic levels on the serial interface do not exceed safe
+thresholds. The controller is powered by the 3.3V rail, so in theory can't
+handle 5V logic levels.
 
+However, it seems that 5V transceivers work fine with the MCP2515, while a
+Texas Instruments SN65HVD234 3.3 V CAN Transceiver did not.
 See [Overview of 3.3V CAN Transceivers] for more information on 3.3V operation.
+
+The voltage for the transceiver can be selected by soldering 0Ω jumpers or
+wires into either R6 or R7, but not both. R6 connects 3.3V, while R7 is for 5V.
+
+:warning: Never solder both R6 and R7!
 
 The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
@@ -46,7 +53,7 @@ The connection can be removed after the EEPROM has been programmed.
 R5 controls the slop of the signals on the CAN bus. A 0Ω resistor should be
 soldered for maximum performance.
 
-The filter capacitor C3 is optional, but recommended.
+The tantalum filter capacitor C3 is optional, but recommended.
 
 C5 and J3 are intended to supply 5V power to the Raspberry Pi. They can be
 left out if the Raspberry Pi is powered via USB.
