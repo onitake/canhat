@@ -12,7 +12,7 @@
   (page A4)
   (title_block
     (title "CAN HAT for Raspberry Pi")
-    (date 2019-05-02)
+    (date 2019-05-14)
     (rev 2)
     (company "© 2019 Gregor Riepl")
   )
@@ -41,7 +41,7 @@
   )
 
   (setup
-    (last_trace_width 0.5)
+    (last_trace_width 0.25)
     (user_trace_width 0.5)
     (trace_clearance 0.2)
     (zone_clearance 0.25)
