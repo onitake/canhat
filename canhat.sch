@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
-Date "2019-05-01"
-Rev "2"
+Date "2019-05-15"
+Rev "3"
 Comp "© 2019 Gregor Riepl"
 Comment1 ""
 Comment2 ""
@@ -504,13 +504,13 @@ Text Label 8400 3300 0    50   ~ 0
 CAN_P
 Text Label 8400 3400 0    50   ~ 0
 CAN_N
-Text Label 9250 3150 2    50   ~ 0
+Text Label 9400 3250 2    50   ~ 0
 CAN_P
-Text Label 9250 3450 2    50   ~ 0
+Text Label 9400 3550 2    50   ~ 0
 CAN_P
-Text Label 9250 3250 2    50   ~ 0
+Text Label 9400 3350 2    50   ~ 0
 CAN_N
-Text Label 9250 3350 2    50   ~ 0
+Text Label 9400 3450 2    50   ~ 0
 CAN_N
 $Comp
 L Interface_CAN_LIN:SN65HVD234 U2
@@ -560,17 +560,6 @@ F 1 "GND" H 7605 3627 50  0000 C CNN
 F 2 "" H 7600 3800 50  0001 C CNN
 F 3 "" H 7600 3800 50  0001 C CNN
 	1    7600 3800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 J2
-U 1 1 5CC6B3E9
-P 9450 3250
-F 0 "J2" H 9530 3242 50  0000 L CNN
-F 1 "CAN In / Out" H 9530 3151 50  0000 L CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 9450 3250 50  0001 C CNN
-F 3 "~" H 9450 3250 50  0001 C CNN
-	1    9450 3250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -709,5 +698,38 @@ F 2 "" H 7850 5500 50  0001 C CNN
 F 3 "" H 7850 5500 50  0001 C CNN
 	1    7850 5500
 	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J2
+U 1 1 5CDB0786
+P 9600 3350
+F 0 "J2" H 9679 3342 50  0000 L CNN
+F 1 "CAN In/Out/GND" H 9679 3251 50  0000 L CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-6_1x06_P2.54mm_Horizontal" H 9600 3350 50  0001 C CNN
+F 3 "~" H 9600 3350 50  0001 C CNN
+	1    9600 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5CDB15C9
+P 9400 3650
+F 0 "#PWR0119" H 9400 3400 50  0001 C CNN
+F 1 "GND" H 9405 3477 50  0000 C CNN
+F 2 "" H 9400 3650 50  0001 C CNN
+F 3 "" H 9400 3650 50  0001 C CNN
+	1    9400 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 5CDB1625
+P 9400 3150
+F 0 "#PWR0120" H 9400 2900 50  0001 C CNN
+F 1 "GND" H 9405 2977 50  0000 C CNN
+F 2 "" H 9400 3150 50  0001 C CNN
+F 3 "" H 9400 3150 50  0001 C CNN
+	1    9400 3150
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
