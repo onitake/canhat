@@ -5,7 +5,7 @@ Look! A hat! :tophat:
 This little board extends the Raspberry Pi with a CAN interface and screw
 terminals for external 5V power.
 
-![board](https://user-images.githubusercontent.com/371687/57573365-f2a52800-7426-11e9-87c4-eca6107b6ef7.jpg)
+![board](https://user-images.githubusercontent.com/371687/57754114-0209c700-76ee-11e9-8de6-7f7b3594a463.jpg)
 
 ## Specifications
 
@@ -19,8 +19,8 @@ screw terminals for easier wiring and a smaller footprint.
 
 If you intend to adopt the CAN HAT in an industrial environment, replace the
 screw terminals with more robust connectors, or make sure the wires are firmly
-attached. You should also screw HAT and Raspberry Pi together using spacers and
-M2.5 screws.
+connected. You should also mount the HAT to the Raspberry Pi using spacers
+and M2.5 screws.
 
 ### Electronics
 
@@ -30,9 +30,9 @@ provided that that logic levels on the serial interface do not exceed safe
 thresholds. The controller is powered by the 3.3V rail, so in theory can't
 handle 5V logic levels.
 
-However, it seems that 5V transceivers work fine with the MCP2515, while a
-Texas Instruments SN65HVD234 3.3 V CAN Transceiver did not.
-See [Overview of 3.3V CAN Transceivers] for more information on 3.3V operation.
+However, it seems that 5V transceivers such as the Microship MCP2551 work fine
+with the MCP2515. See [Overview of 3.3V CAN Transceivers] for more information
+on 3.3V operation.
 
 The voltage for the transceiver can be selected by soldering 0Ω jumpers or
 wires into either R6 or R7, but not both. R6 connects 3.3V, while R7 is for 5V.
@@ -65,7 +65,13 @@ CAN nodes. With star quad cables, connect opposite wires to the
 same terminal for better noise resistance.
 
 If the Raspberry Pi is the last node in a chain, attach a 120Ω termination
-resistor to the unused terminal.
+resistor to the terminals marked with a downwards arrow (↓).
+
+:warning: Note the polarity on the terminals!
+
+The ground terminals to the side of the CAN lines aren't always necessary.
+Consider ground loops in your whole system and consult the CAN specification
+before connecting them.
 
 ## Integration
 
@@ -121,6 +127,7 @@ but lower speeds will work fine too.
 ### Data Sheets
 
 * [Microchip MCP2515 CAN Interface Controller](https://www.microchip.com/wwwproducts/en/en010406)
+* [Microchip MCP2551](http://ww1.microchip.com/downloads/en/devicedoc/21667e.pdf)
 * [Texas Instruments SN65HVD234 3.3 V CAN Transceiver](http://www.ti.com/product/SN65HVD234)
 * [Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
 
