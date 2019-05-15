@@ -37,7 +37,7 @@ on 3.3V operation.
 The voltage for the transceiver can be selected by soldering 0Ω jumpers or
 wires into either R6 or R7, but not both. R6 connects 3.3V, while R7 is for 5V.
 
-:warning: Never solder both R6 and R7!
+:warning: **Never solder both R6 and R7!**
 
 The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
@@ -67,7 +67,7 @@ same terminal for better noise resistance.
 If the Raspberry Pi is the last node in a chain, attach a 120Ω termination
 resistor to the terminals marked with a downwards arrow (↓).
 
-:warning: Note the polarity on the terminals!
+:warning: **Note the polarity on the terminals!**
 
 The ground terminals to the side of the CAN lines aren't always necessary.
 Consider ground loops in your whole system and consult the CAN specification
