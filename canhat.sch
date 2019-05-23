@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
-Date "2019-05-15"
+Date "2019-05-23"
 Rev "3"
 Comp "© 2019 Gregor Riepl"
 Comment1 ""
@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L power:GND #PWR0101
 U 1 1 5CA2796F
-P 6500 4600
-F 0 "#PWR0101" H 6500 4350 50  0001 C CNN
-F 1 "GND" H 6505 4427 50  0000 C CNN
-F 2 "" H 6500 4600 50  0001 C CNN
-F 3 "" H 6500 4600 50  0001 C CNN
-	1    6500 4600
+P 5350 4600
+F 0 "#PWR0101" H 5350 4350 50  0001 C CNN
+F 1 "GND" H 5355 4427 50  0000 C CNN
+F 2 "" H 5350 4600 50  0001 C CNN
+F 3 "" H 5350 4600 50  0001 C CNN
+	1    5350 4600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -39,67 +39,67 @@ $EndComp
 $Comp
 L Interface_CAN_LIN:MCP2515-xSO U1
 U 1 1 5CA27BD6
-P 6500 3800
-F 0 "U1" H 6500 4778 50  0000 C CNN
-F 1 "MCP2515-xSO" H 6500 4687 50  0000 C CNN
-F 2 "Package_SO:SOIC-18W_7.5x11.6mm_P1.27mm" H 6500 2900 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21801e.pdf" H 6600 3000 50  0001 C CNN
-	1    6500 3800
+P 5350 3800
+F 0 "U1" H 5350 4778 50  0000 C CNN
+F 1 "MCP2515-xSO" H 5350 4687 50  0000 C CNN
+F 2 "Package_SO:SOIC-18W_7.5x11.6mm_P1.27mm" H 5350 2900 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21801e.pdf" H 5450 3000 50  0001 C CNN
+	1    5350 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C2
 U 1 1 5CA27DD5
-P 5250 4200
-F 0 "C2" V 5502 4200 50  0000 C CNN
-F 1 "22p" V 5411 4200 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5288 4050 50  0001 C CNN
-F 3 "~" H 5250 4200 50  0001 C CNN
-	1    5250 4200
+P 4100 4200
+F 0 "C2" V 4352 4200 50  0000 C CNN
+F 1 "22p" V 4261 4200 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4138 4050 50  0001 C CNN
+F 3 "~" H 4100 4200 50  0001 C CNN
+	1    4100 4200
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:C C1
 U 1 1 5CA27E51
-P 5250 3900
-F 0 "C1" V 4998 3900 50  0000 C CNN
-F 1 "22p" V 5089 3900 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5288 3750 50  0001 C CNN
-F 3 "~" H 5250 3900 50  0001 C CNN
-	1    5250 3900
+P 4100 3900
+F 0 "C1" V 3848 3900 50  0000 C CNN
+F 1 "22p" V 3939 3900 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4138 3750 50  0001 C CNN
+F 3 "~" H 4100 3900 50  0001 C CNN
+	1    4100 3900
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:Crystal Y1
 U 1 1 5CA27EFE
-P 5400 4050
-F 0 "Y1" V 5446 3919 50  0000 R CNN
-F 1 "16MHz" V 5355 3919 50  0000 R CNN
-F 2 "Crystal:Crystal_SMD_HC49-SD" H 5400 4050 50  0001 C CNN
-F 3 "~" H 5400 4050 50  0001 C CNN
-	1    5400 4050
+P 4250 4050
+F 0 "Y1" V 4296 3919 50  0000 R CNN
+F 1 "16MHz" V 4205 3919 50  0000 R CNN
+F 2 "Crystal:Crystal_SMD_HC49-SD" H 4250 4050 50  0001 C CNN
+F 3 "~" H 4250 4050 50  0001 C CNN
+	1    4250 4050
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R1
 U 1 1 5CA27F87
-P 7250 4400
-F 0 "R1" V 7457 4400 50  0000 C CNN
-F 1 "10k" V 7366 4400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7180 4400 50  0001 C CNN
-F 3 "~" H 7250 4400 50  0001 C CNN
-	1    7250 4400
+P 6100 4400
+F 0 "R1" V 6307 4400 50  0000 C CNN
+F 1 "10k" V 6216 4400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 4400 50  0001 C CNN
+F 3 "~" H 6100 4400 50  0001 C CNN
+	1    6100 4400
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Connector:Raspberry_Pi_2_3 J1
 U 1 1 5CA2805B
-P 3200 4100
-F 0 "J1" H 3200 5578 50  0000 C CNN
-F 1 "Raspberry_Pi_2_3" H 3200 5487 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 3200 4100 50  0001 C CNN
-F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 3200 4100 50  0001 C CNN
-	1    3200 4100
+P 2050 4100
+F 0 "J1" H 2050 5578 50  0000 C CNN
+F 1 "Raspberry_Pi_2_3" H 2050 5487 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x20_P2.54mm_Vertical" H 2050 4100 50  0001 C CNN
+F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 2050 4100 50  0001 C CNN
+	1    2050 4100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -114,33 +114,33 @@ F 3 "" H 8000 3700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5400 3900 5800 3900
+	4250 3900 4650 3900
 Wire Wire Line
-	5800 3900 5800 4000
+	4650 3900 4650 4000
 Wire Wire Line
-	5800 4000 5900 4000
+	4650 4000 4750 4000
 Wire Wire Line
-	5400 4200 5800 4200
+	4250 4200 4650 4200
 Wire Wire Line
-	5800 4200 5800 4100
+	4650 4200 4650 4100
 Wire Wire Line
-	5800 4100 5900 4100
-Connection ~ 5400 4200
-Connection ~ 5400 3900
+	4650 4100 4750 4100
+Connection ~ 4250 4200
+Connection ~ 4250 3900
 $Comp
 L power:GND #PWR0103
 U 1 1 5CA28370
-P 5100 4200
-F 0 "#PWR0103" H 5100 3950 50  0001 C CNN
-F 1 "GND" H 5105 4027 50  0000 C CNN
-F 2 "" H 5100 4200 50  0001 C CNN
-F 3 "" H 5100 4200 50  0001 C CNN
-	1    5100 4200
+P 3950 4200
+F 0 "#PWR0103" H 3950 3950 50  0001 C CNN
+F 1 "GND" H 3955 4027 50  0000 C CNN
+F 2 "" H 3950 4200 50  0001 C CNN
+F 3 "" H 3950 4200 50  0001 C CNN
+	1    3950 4200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5100 4200 5100 3900
-Connection ~ 5100 4200
+	3950 4200 3950 3900
+Connection ~ 3950 4200
 $Comp
 L power:GND #PWR0104
 U 1 1 5CA284A0
@@ -155,64 +155,43 @@ $EndComp
 $Comp
 L power:+3V3 #PWR0105
 U 1 1 5CA28BA6
-P 3400 2800
-F 0 "#PWR0105" H 3400 2650 50  0001 C CNN
-F 1 "+3V3" H 3415 2973 50  0000 C CNN
-F 2 "" H 3400 2800 50  0001 C CNN
-F 3 "" H 3400 2800 50  0001 C CNN
-	1    3400 2800
+P 2250 2800
+F 0 "#PWR0105" H 2250 2650 50  0001 C CNN
+F 1 "+3V3" H 2265 2973 50  0000 C CNN
+F 2 "" H 2250 2800 50  0001 C CNN
+F 3 "" H 2250 2800 50  0001 C CNN
+	1    2250 2800
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0106
 U 1 1 5CA28BC9
-P 2800 5400
-F 0 "#PWR0106" H 2800 5150 50  0001 C CNN
-F 1 "GND" H 2805 5227 50  0000 C CNN
-F 2 "" H 2800 5400 50  0001 C CNN
-F 3 "" H 2800 5400 50  0001 C CNN
-	1    2800 5400
+P 1650 5400
+F 0 "#PWR0106" H 1650 5150 50  0001 C CNN
+F 1 "GND" H 1655 5227 50  0000 C CNN
+F 2 "" H 1650 5400 50  0001 C CNN
+F 3 "" H 1650 5400 50  0001 C CNN
+	1    1650 5400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2800 5400 2900 5400
-Connection ~ 2800 5400
-Connection ~ 2900 5400
-Wire Wire Line
-	2900 5400 3000 5400
-Connection ~ 3000 5400
-Wire Wire Line
-	3000 5400 3100 5400
-Connection ~ 3100 5400
-Wire Wire Line
-	3100 5400 3200 5400
-Connection ~ 3200 5400
-Wire Wire Line
-	3200 5400 3300 5400
-Connection ~ 3300 5400
-Wire Wire Line
-	3300 5400 3400 5400
-Connection ~ 3400 5400
-Wire Wire Line
-	3400 5400 3500 5400
-Wire Wire Line
-	3400 2800 3300 2800
-Connection ~ 3400 2800
-Text Label 5900 3300 2    50   ~ 0
+	2250 2800 2150 2800
+Connection ~ 2250 2800
+Text Label 4750 3300 2    50   ~ 0
 MISO
-Text Label 5900 3200 2    50   ~ 0
+Text Label 4750 3200 2    50   ~ 0
 MOSI
-Text Label 5900 3400 2    50   ~ 0
+Text Label 4750 3400 2    50   ~ 0
 ~CS
-Text Label 5900 3500 2    50   ~ 0
+Text Label 4750 3500 2    50   ~ 0
 SCK
-Text Label 7100 3800 0    50   ~ 0
+Text Label 5950 3800 0    50   ~ 0
 ~INT
-Text Label 4000 4500 0    50   ~ 0
+Text Label 2850 4500 0    50   ~ 0
 MOSI
-Text Label 4000 4400 0    50   ~ 0
+Text Label 2850 4400 0    50   ~ 0
 MISO
-Text Label 4000 4600 0    50   ~ 0
+Text Label 2850 4600 0    50   ~ 0
 SCK
 $Comp
 L power:+3V3 #PWR0107
@@ -225,9 +204,9 @@ F 3 "" H 7650 4900 50  0001 C CNN
 	1    7650 4900
 	1    0    0    -1  
 $EndComp
-Text Label 4000 4300 0    50   ~ 0
+Text Label 2850 4300 0    50   ~ 0
 ~CS
-Text Label 4000 4800 0    50   ~ 0
+Text Label 2850 4800 0    50   ~ 0
 ~INT
 $Comp
 L Device:CP C3
@@ -271,12 +250,12 @@ $EndComp
 $Comp
 L power:+3V3 #PWR0113
 U 1 1 5CA2A143
-P 7400 4400
-F 0 "#PWR0113" H 7400 4250 50  0001 C CNN
-F 1 "+3V3" V 7415 4528 50  0000 L CNN
-F 2 "" H 7400 4400 50  0001 C CNN
-F 3 "" H 7400 4400 50  0001 C CNN
-	1    7400 4400
+P 6250 4400
+F 0 "#PWR0113" H 6250 4250 50  0001 C CNN
+F 1 "+3V3" V 6265 4528 50  0000 L CNN
+F 2 "" H 6250 4400 50  0001 C CNN
+F 3 "" H 6250 4400 50  0001 C CNN
+	1    6250 4400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -360,9 +339,9 @@ Text Label 9900 2100 0    50   ~ 0
 ID_SC
 Text Label 9900 2000 0    50   ~ 0
 ID_SD
-Text Label 4000 3200 0    50   ~ 0
+Text Label 2850 3200 0    50   ~ 0
 ID_SD
-Text Label 4000 3300 0    50   ~ 0
+Text Label 2850 3300 0    50   ~ 0
 ID_SC
 Wire Wire Line
 	9500 2200 9500 1900
@@ -492,13 +471,13 @@ F 3 "~" H 10250 5300 50  0001 C CNN
 	1    10250 5300
 	1    0    0    -1  
 $EndComp
-Text Label 7100 3200 0    50   ~ 0
+Text Label 6250 3200 0    50   ~ 0
 RX
 Text Label 7600 3300 2    50   ~ 0
 RX
 Text Label 7600 3200 2    50   ~ 0
 TX
-Text Label 7100 3300 0    50   ~ 0
+Text Label 6250 3300 0    50   ~ 0
 TX
 Text Label 8400 3300 0    50   ~ 0
 CAN_P
@@ -526,12 +505,12 @@ $EndComp
 $Comp
 L power:+3V3 #PWR0108
 U 1 1 5CA3F27F
-P 6500 3000
-F 0 "#PWR0108" H 6500 2850 50  0001 C CNN
-F 1 "+3V3" H 6515 3173 50  0000 C CNN
-F 2 "" H 6500 3000 50  0001 C CNN
-F 3 "" H 6500 3000 50  0001 C CNN
-	1    6500 3000
+P 5350 3000
+F 0 "#PWR0108" H 5350 2850 50  0001 C CNN
+F 1 "+3V3" H 5365 3173 50  0000 C CNN
+F 2 "" H 5350 3000 50  0001 C CNN
+F 3 "" H 5350 3000 50  0001 C CNN
+	1    5350 3000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -576,17 +555,17 @@ $EndComp
 $Comp
 L power:+5V #PWR0111
 U 1 1 5CC8D443
-P 3000 2800
-F 0 "#PWR0111" H 3000 2650 50  0001 C CNN
-F 1 "+5V" H 3015 2973 50  0000 C CNN
-F 2 "" H 3000 2800 50  0001 C CNN
-F 3 "" H 3000 2800 50  0001 C CNN
-	1    3000 2800
+P 1850 2800
+F 0 "#PWR0111" H 1850 2650 50  0001 C CNN
+F 1 "+5V" H 1865 2973 50  0000 C CNN
+F 2 "" H 1850 2800 50  0001 C CNN
+F 3 "" H 1850 2800 50  0001 C CNN
+	1    1850 2800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3100 2800 3000 2800
-Connection ~ 3000 2800
+	1950 2800 1850 2800
+Connection ~ 1850 2800
 $Comp
 L power:+5V #PWR0112
 U 1 1 5CC8D96C
@@ -732,4 +711,47 @@ F 3 "" H 9400 3150 50  0001 C CNN
 	1    9400 3150
 	0    1    1    0   
 $EndComp
+$Comp
+L Device:R R8
+U 1 1 5CE467EA
+P 6100 3200
+F 0 "R8" V 6307 3200 50  0000 C CNN
+F 1 "1k" V 6216 3200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 3200 50  0001 C CNN
+F 3 "~" H 6100 3200 50  0001 C CNN
+	1    6100 3200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5CE4691B
+P 6100 3300
+F 0 "R9" V 6307 3300 50  0000 C CNN
+F 1 "1k" V 6216 3300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6030 3300 50  0001 C CNN
+F 3 "~" H 6100 3300 50  0001 C CNN
+	1    6100 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2350 5400 2250 5400
+Connection ~ 1650 5400
+Connection ~ 1750 5400
+Wire Wire Line
+	1750 5400 1650 5400
+Connection ~ 1850 5400
+Wire Wire Line
+	1850 5400 1750 5400
+Connection ~ 1950 5400
+Wire Wire Line
+	1950 5400 1850 5400
+Connection ~ 2050 5400
+Wire Wire Line
+	2050 5400 1950 5400
+Connection ~ 2150 5400
+Wire Wire Line
+	2150 5400 2050 5400
+Connection ~ 2250 5400
+Wire Wire Line
+	2250 5400 2150 5400
 $EndSCHEMATC
