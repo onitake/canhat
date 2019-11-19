@@ -174,9 +174,6 @@ F 3 "" H 1650 5400 50  0001 C CNN
 	1    1650 5400
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2250 2800 2150 2800
-Connection ~ 2250 2800
 Text Label 4750 3300 2    50   ~ 0
 MISO
 Text Label 4750 3200 2    50   ~ 0
