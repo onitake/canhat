@@ -57,9 +57,11 @@ If the Raspberry Pi is powered via USB, the components for this converter
 should not be soldered.
 
 It is also possible to power the 5V rail directly from the J5 connector.
-Solder a 0Ω into R10 to achieve this.
+Solder a 0Ω jumper into R10 to achieve this.
 
 :warning: **Only solder R10 if you want to power the circuit with 5V directly!**
+
+When using the step-down converter, the input polarity is protected by D7.
 
 ## Cabling and Termination
 
