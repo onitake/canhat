@@ -28,11 +28,8 @@ The circuit is built around the Microchip MCP2515 CAN Interface Controller
 and a CAN transceiver IC. It is possible to use both 3.3V and 5V transceivers,
 provided that that logic levels on the serial interface do not exceed safe
 thresholds. The controller is powered by the 3.3V rail, so in theory can't
-handle 5V logic levels.
-
-However, it seems that 5V transceivers such as the Microship MCP2551 work fine
-with the MCP2515. See [Overview of 3.3V CAN Transceivers] for more information
-on 3.3V operation.
+handle 5V logic levels. See [Overview of 3.3V CAN Transceivers] for more
+information on 3.3V CAN bus operation.
 
 The voltage for the transceiver can be selected by soldering 0Ω jumpers or
 wires into either R6 or R7, but not both. R6 connects 3.3V, while R7 is for 5V.
@@ -43,20 +40,26 @@ The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
 To reduce interference on the CAN bus, tuned microstrips were used to
 connect the CAN transceiver to the terminals on the PCB. The differential
-impedance is matched to 120Ω.
+impedance is matched to 120Ω. For added fun, the pair length is matched.
 
 Aside from the CAN part, an additional ID EEPROM was added to conform to
 the HAT specification. JP1 is only needed to program the EEPROM - for a
-smaller PCB footprint, the pads can also be connected by other means.
-The connection can be removed after the EEPROM has been programmed.
+smaller PCB footprint, the jumper can be left out. It is only needed during
+EEPROM programming and the connection can be made by other means.
 
-R5 controls the slop of the signals on the CAN bus. A 0Ω resistor should be
-soldered for maximum performance.
+R5 controls the slope of the signals on the CAN bus. A 0Ω resistor should be
+soldered for maximum performance. Some transceivers use the pin for other
+functions, refer to the respective data sheet if you don't use the
+recommended transceiver.
 
-The tantalum filter capacitor C3 is optional, but recommended.
+The left side of the board is populated with a 7-24V to 5V step-down converter.
+If the Raspberry Pi is powered via USB, the components for this converter
+should not be soldered.
 
-C5 and J3 are intended to supply 5V power to the Raspberry Pi. They can be
-left out if the Raspberry Pi is powered via USB.
+It is also possible to power the 5V rail directly from the J5 connector.
+Solder a 0Ω into R10 to achieve this.
+
+:warning: **Only solder R10 if you want to power the circuit with 5V directly!**
 
 ## Cabling and Termination
 
