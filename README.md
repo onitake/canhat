@@ -5,7 +5,7 @@ Look! A hat! :tophat:
 This little board extends the Raspberry Pi with a CAN interface and screw
 terminals for external 5V power.
 
-![board](https://user-images.githubusercontent.com/371687/69186039-1b198780-0b18-11ea-9b8f-752de715e423.png)
+![board](https://user-images.githubusercontent.com/371687/69364658-feee2580-0c92-11ea-87c1-2cf3c54ed5a7.png)
 
 ## Specifications
 
