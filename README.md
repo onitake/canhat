@@ -117,8 +117,8 @@ Note that the interface still needs to be brought up like a network device:
 
     ip link set can0 up type can bitrate 1000000
 
-This configures a line speed of 1MHz. You probably shouldn't go too high,
-but lower speeds will work fine too.
+This configures a line speed of 1MHz. Commonly supported rates are 125kHz or
+1MHz. Choose according to your other CAN components and wiring quality.
 
 ## Links
 
@@ -135,10 +135,11 @@ but lower speeds will work fine too.
 * [Microchip MCP2551](http://ww1.microchip.com/downloads/en/devicedoc/21667e.pdf)
 * [Texas Instruments SN65HVD234 3.3 V CAN Transceiver](http://www.ti.com/product/SN65HVD234)
 * [Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
+* [Diodes Inc AP63205 Buck Regulator](https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf)
 
 ## Copyright
 
 This circuit, schematics, board layouts and accompanying documentation is
-Copyright © 2019 by Gregor Riepl
+Copyright © 2019-2020 by Gregor Riepl
 
-You may use it under terms of the CERN Open Hardware Licence, version v1.2.
+You may use it under the terms of the CERN Open Hardware Licence, version v1.2.
