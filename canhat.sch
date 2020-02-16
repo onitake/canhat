@@ -7,7 +7,7 @@ Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
 Date "2019-11-12"
 Rev "5"
-Comp "© 2019 Gregor Riepl"
+Comp "© 2020 Gregor Riepl"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -755,7 +755,7 @@ U 1 1 5DD8FD60
 P 6150 5350
 F 0 "C3" H 6265 5396 50  0000 L CNN
 F 1 "10u" H 6265 5305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric_Pad1.42x2.65mm_HandSolder" H 6188 5200 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6188 5200 50  0001 C CNN
 F 3 "~" H 6150 5350 50  0001 C CNN
 	1    6150 5350
 	1    0    0    -1  
