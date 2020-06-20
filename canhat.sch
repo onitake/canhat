@@ -707,12 +707,7 @@ Connection ~ 3200 6700
 Wire Wire Line
 	4050 6850 4350 6850
 Wire Wire Line
-	4350 6850 4350 6350
-Wire Wire Line
-	4350 6350 3350 6350
-Wire Wire Line
 	3350 6350 3350 6550
-Connection ~ 4350 6850
 $Comp
 L Device:Polyfuse F2
 U 1 1 5DC9E8F0
@@ -840,17 +835,6 @@ F 3 "" H 4900 6550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x05 J3
-U 1 1 5DDDB345
-P 5450 4700
-F 0 "J3" H 5530 4742 50  0000 L CNN
-F 1 "GPIO" H 5530 4651 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 5450 4700 50  0001 C CNN
-F 3 "~" H 5450 4700 50  0001 C CNN
-	1    5450 4700
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R14
 U 1 1 5DDFEBFA
 P 5250 4250
@@ -899,18 +883,11 @@ Wire Wire Line
 Wire Wire Line
 	5150 4400 5150 4600
 Wire Wire Line
-	5150 4600 5250 4600
-Wire Wire Line
 	5050 4400 5050 4700
-Wire Wire Line
-	5050 4700 5250 4700
 Wire Wire Line
 	4950 4400 4950 4800
 Wire Wire Line
-	4950 4800 5250 4800
-Wire Wire Line
 	5250 4500 4850 4500
-Connection ~ 5250 4500
 Wire Wire Line
 	5150 4600 4850 4600
 Connection ~ 5150 4600
@@ -920,17 +897,6 @@ Connection ~ 5050 4700
 Wire Wire Line
 	4950 4800 4850 4800
 Connection ~ 4950 4800
-$Comp
-L power:GND #PWR0112
-U 1 1 5DE13DE3
-P 5250 4900
-F 0 "#PWR0112" H 5250 4650 50  0001 C CNN
-F 1 "GND" H 5255 4727 50  0000 C CNN
-F 2 "" H 5250 4900 50  0001 C CNN
-F 3 "" H 5250 4900 50  0001 C CNN
-	1    5250 4900
-	1    0    0    -1  
-$EndComp
 Text Label 1250 3900 2    50   ~ 0
 GPIO19
 Text Label 1250 4700 2    50   ~ 0
@@ -941,9 +907,9 @@ Text Label 1250 4100 2    50   ~ 0
 GPIO21
 Text Label 4850 4500 2    50   ~ 0
 GPIO19
-Text Label 4850 4600 2    50   ~ 0
-GPIO26
 Text Label 4850 4700 2    50   ~ 0
+GPIO26
+Text Label 4850 4600 2    50   ~ 0
 GPIO20
 Text Label 4850 4800 2    50   ~ 0
 GPIO21
@@ -1026,4 +992,43 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/AT24C32E-I2C-Compatible-Two
 	1    8800 2100
 	1    0    0    -1  
 $EndComp
+Connection ~ 5250 4500
+$Comp
+L Connector_Generic:Conn_01x05 J3
+U 1 1 5DDDB345
+P 5700 4600
+F 0 "J3" H 5780 4642 50  0000 L CNN
+F 1 "GPIO" H 5780 4551 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 5700 4600 50  0001 C CNN
+F 3 "~" H 5700 4600 50  0001 C CNN
+	1    5700 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 4500 5500 4500
+Wire Wire Line
+	5150 4600 5500 4600
+Wire Wire Line
+	5050 4700 5500 4700
+Wire Wire Line
+	4950 4800 5500 4800
+$Comp
+L power:GND #PWR0112
+U 1 1 5DE13DE3
+P 5400 4300
+F 0 "#PWR0112" H 5400 4050 50  0001 C CNN
+F 1 "GND" H 5405 4127 50  0000 C CNN
+F 2 "" H 5400 4300 50  0001 C CNN
+F 3 "" H 5400 4300 50  0001 C CNN
+	1    5400 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 4400 5500 4300
+Wire Wire Line
+	5500 4300 5400 4300
+Wire Wire Line
+	4650 6350 4650 6850
+Wire Wire Line
+	3350 6350 4650 6350
 $EndSCHEMATC
