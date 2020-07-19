@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "CAN HAT for Raspberry Pi"
-Date "2019-11-12"
-Rev "5"
+Date "2020-07-19"
+Rev "6"
 Comp "© 2020 Gregor Riepl"
 Comment1 ""
 Comment2 ""
