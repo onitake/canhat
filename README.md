@@ -5,7 +5,7 @@ Look! A hat! :tophat:
 This little board extends the Raspberry Pi with a CAN interface, a 5V regulator
 to supply the Pi with power and a pin header to access some GPIO lines.
 
-![board](https://user-images.githubusercontent.com/371687/69364658-feee2580-0c92-11ea-87c1-2cf3c54ed5a7.png)
+![canhat](https://user-images.githubusercontent.com/371687/87884297-e85cc180-ca0d-11ea-8d3f-9ff7ddcb1a1c.png)
 
 ## Specifications
 
