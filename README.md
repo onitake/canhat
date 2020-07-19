@@ -137,9 +137,11 @@ This configures a line speed of 1MHz. Commonly supported rates are 125kHz or
 * [Microchip AT24C32E 32Kbit Serial EEPROM](https://www.microchip.com/wwwproducts/en/AT24C32E)
 * [Diodes Inc AP63205 Buck Regulator](https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf)
 
-## Copyright
+## Legal
 
 This circuit, schematics, board layouts and accompanying documentation is
 Copyright © 2019-2020 by Gregor Riepl
 
 You may use it under the terms of the CERN Open Hardware Licence, version v1.2.
+
+Raspberry Pi is a trademark of the Raspberry Pi Foundation.
