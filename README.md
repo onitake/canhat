@@ -2,8 +2,8 @@
 
 Look! A hat! :tophat:
 
-This little board extends the Raspberry Pi with a CAN interface and screw
-terminals for external 5V power.
+This little board extends the Raspberry Pi with a CAN interface, a 5V regulator
+to supply the Pi with power and a pin header to access some GPIO lines.
 
 ![board](https://user-images.githubusercontent.com/371687/69364658-feee2580-0c92-11ea-87c1-2cf3c54ed5a7.png)
 
@@ -14,8 +14,11 @@ terminals for external 5V power.
 The board outline and component placement conform to the [Micro HAT specification]
 and the [Add-On Boards and HATs] specification.
 
-Instead of the usual DB9 connector found on many boards, this one has
-screw terminals for easier wiring and a smaller footprint.
+Instead of the usual DB9 connector found on many CAN interfaces, this one has
+screw terminals for easier wiring and a smaller footprint. There is a separate
+version in the db9 branch that includes two DB9 connectors instead. These
+can even be connected to the voltage regulator, if the Pi should be powered
+from the bus.
 
 If you intend to adopt the CAN HAT in an industrial environment, replace the
 screw terminals with more robust connectors, or make sure the wires are firmly
@@ -28,7 +31,8 @@ The circuit is built around the Microchip MCP2515 CAN Interface Controller
 and a CAN transceiver IC. It is possible to use both 3.3V and 5V transceivers,
 provided that that logic levels on the serial interface do not exceed safe
 thresholds. The controller is powered by the 3.3V rail, so in theory can't
-handle 5V logic levels. See [Overview of 3.3V CAN Transceivers] for more
+handle 5V logic levels well. Using current-limiting resistors, it should still
+work without damage. See [Overview of 3.3V CAN Transceivers] for more
 information on 3.3V CAN bus operation.
 
 The voltage for the transceiver can be selected by soldering 0Ω jumpers or
@@ -40,12 +44,12 @@ The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
 To reduce interference on the CAN bus, tuned microstrips were used to
 connect the CAN transceiver to the terminals on the PCB. The differential
-impedance is matched to 120Ω. For added fun, the pair length is matched.
+impedance is matched to 60Ω. For added fun, the pair length is also matched,
+despite the comparatively low signal speed of the CAN bus (1MHz).
 
 Aside from the CAN part, an additional ID EEPROM was added to conform to
-the HAT specification. JP1 is only needed to program the EEPROM - for a
-smaller PCB footprint, the jumper can be left out. It is only needed during
-EEPROM programming and the connection can be made by other means.
+the HAT specification. JP1 is only needed to program the EEPROM. The part can
+be left out if desired, and the connection be made by other means.
 
 R5 controls the slope of the signals on the CAN bus. A 0Ω resistor should be
 soldered for maximum performance. Some transceivers use the pin for other
@@ -57,26 +61,49 @@ If the Raspberry Pi is powered via USB, the components for this converter
 should not be soldered.
 
 It is also possible to power the 5V rail directly from the J5 connector.
-Solder a 0Ω jumper into R10 to achieve this.
+Solder a 0Ω jumper into R10 to achieve this and leave out F2, D7, U4, L1, C9,
+C10, C12 and C13. For additional voltage stability on the bus transceiver,
+C12 can be added if desired.
 
-:warning: **Only solder R10 if you want to power the circuit with 5V directly!**
+:warning: **Only solder R10 if you want to power the circuit by 5V directly!**
 
 When using the step-down converter, the input polarity is protected by D7.
+However, because the negative terminal is directly connected to the ground
+plane and the CAN bus ground, polarity reversal may still lead to a
+short-circuit via other bus components.
 
 ## Cabling and Termination
 
 It is recommended to use twisted pair or star quad cabling to connect other
-CAN nodes. With star quad cables, connect opposite wires to the
+CAN nodes. With star quad cables, connect opposite wires together to the
 same terminal for better noise resistance.
+
+Use shielded cable if possible and make sure all CAN bus componentes share
+a common ground. To facilitate connecting the bus ground, there is a ground
+terminal for each CAN connection, marked with an earth sign (⏚).
 
 If the Raspberry Pi is the last node in a chain, attach a 120Ω termination
 resistor to the terminals marked with a downwards arrow (↓).
 
-:warning: **Note the polarity on the terminals!**
+:warning: **Note the polarity on the terminals! CAN does not support swapping
+the H/L pins.**
 
-The ground terminals to the side of the CAN lines aren't always necessary.
-Consider ground loops in your whole system and consult the CAN specification
-before connecting them.
+## GPIO Pins
+
+For added convenience, 4 Raspberry Pi GPIO pins are available via an optional
+connector on the board. If you would like to use them, solder the J3 header.
+
+R11, R12, R13, R14 are optional pull-up resistors. When using the GPIO lines
+as external inputs, you can solder 1k-10k resistors into them. A ground pin
+for toggling the logic level is available on the pin header.
+
+The 4 GPIO lines are: GPIO19, GPIO20, GPIO21, GPIO26. GPIO19-21 are also
+available for SPI, but this requires custom configuration and is outside
+the scope of the CAN HAT.
+
+Note: To actually use the GPIO pins, you must edit eeprom_settings.txt to
+suit your custom configuration, or enable the GPIO pins from user space
+after booting the Raspberry Pi.
 
 ## Integration
 
