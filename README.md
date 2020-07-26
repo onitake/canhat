@@ -119,17 +119,23 @@ into an EEPROM image. To build the image, type:
 
     make
 
-To flash the image to the attached EEPROM, type:
+To flash the image to the attached EEPROM, you first need to allow access to
+the first I²C bus. On the Raspberry Pi, this bus is used for several system
+components, and hidden by default to avoid accidental access. Put the following
+line into `/boot/config.txt`:
 
-    make flash
+    dtparam=i2c_vc=on
 
-You might need to run this as root.
+Short the write protection jumper, reboot, and flash the EEPROM:
+
+    sudo make flash
+
+Remove the line from `/boot/config.txt` and the jumper, then reboot.
 
 The preconfigured I²C bus and and device address correspond with the AT24C32E
 chip on the HAT. Change them in the Makefile if you use a different device.
 
-After the device descriptor is flashed, you can disconnect JP1 and reboot.
-The CAN bus should then appear as network device `can0`.
+The CAN bus should then appear automatically as network device `can0`.
 
 ## Compatibility
 
@@ -140,9 +146,14 @@ on how to configure the device manually.
 This may be necessary on older Raspberry Pi boards that don't support the
 ID EEPROM feature.
 
+During testing, you can use the following command to quickly load the driver
+without the ID EEPROM:
+
+    sudo dtoverlay mcp2515-can0 oscillator=16000000 interrupt=12
+
 Note that the interface still needs to be brought up like a network device:
 
-    ip link set can0 up type can bitrate 1000000
+    sudo ip link set can0 up type can bitrate 125000 loopback off sample-point 0.75
 
 This configures a line speed of 1MHz. Commonly supported rates are 125kHz or
 1MHz. Choose according to your other CAN components and wiring quality.
