@@ -28,17 +28,23 @@ and M2.5 screws.
 ### Electronics
 
 The circuit is built around the Microchip MCP2515 CAN Interface Controller
-and a CAN transceiver IC. It is possible to use both 3.3V and 5V transceivers,
-provided that that logic levels on the serial interface do not exceed safe
-thresholds. The controller is powered by the 3.3V rail, so in theory can't
-handle 5V logic levels well. Using current-limiting resistors, it should still
-work without damage. See [Overview of 3.3V CAN Transceivers] for more
-information on 3.3V CAN bus operation.
+and a CAN transceiver IC. Since the Raspberry Pi and the controller are
+powered by 3.3V, you should use a CAN transceiver that works with 3.3V logic
+levels.
 
-The voltage for the transceiver can be selected by soldering 0Ω jumpers or
-wires into either R6 or R7, but not both. R6 connects 3.3V, while R7 is for 5V.
+It is highly recommended to use a 5V CAN transceiver with a separate 3.3V
+input to drive the logic circuits. Texas Instruments SN65HVD541 is such a
+transceiver. To use it, solver a 0Ω resistor or wire into R7.
 
-:warning: **Never solder both R6 and R7!**
+If you prefer to use a 3.3V transceiver instead, you don't need R7. See
+[Overview of 3.3V CAN Transceivers] for more information on 3.3V CAN bus
+operation.
+
+Some transceivers also support powering down the bus by pulling pin 5 low.
+If you solder a 0Ω resistor into R6 and leave out R7, you can control
+power to the bus via GPIO22. Note this may "abuse" the GPIO pin for
+powering some of the transceiver's logic, so make sure you do not exceed
+the maximum drive current of the GPIO pin.
 
 The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
 
@@ -53,24 +59,33 @@ be left out if desired, and the connection be made by other means.
 
 R5 controls the slope of the signals on the CAN bus. A 0Ω resistor should be
 soldered for maximum performance. Some transceivers use the pin for other
-functions, refer to the respective data sheet if you don't use the
+purposes, refer to the respective data sheet if you don't use the
 recommended transceiver.
 
-The left side of the board is populated with a 7-24V to 5V step-down converter.
+The left side of the board is populated with a 6-24V to 5V step-down converter.
 If the Raspberry Pi is powered via USB, the components for this converter
-should not be soldered.
+should not be soldered, or at least not be connected to a power source.
+
+:warning: **Do not connect a power source to both the Raspberry Pi and J5!**
+
+Note that the AP63205 regulator is rated for a maximum current of 2A.
+The [Add-On Boards and HATs] specification recommends at least 2.5A, but 2A
+is normally sufficient unless a lot of peripherals and USB devices are used.
+The Raspberry Pi 3 and the CAN HAT will only draw a few hundred mA when using
+Ethernet and the CAN bus and no other external peripherals.
 
 It is also possible to power the 5V rail directly from the J5 connector.
 Solder a 0Ω jumper into R10 to achieve this and leave out F2, D7, U4, L1, C9,
 C10, C12 and C13. For additional voltage stability on the bus transceiver,
 C12 can be added if desired.
 
-:warning: **Only solder R10 if you want to power the circuit by 5V directly!**
+:warning: **Only solder R10 if you want to power the Raspbery Pi by J5 directly!**
 
 When using the step-down converter, the input polarity is protected by D7.
 However, because the negative terminal is directly connected to the ground
 plane and the CAN bus ground, polarity reversal may still lead to a
-short-circuit via other bus components.
+short-circuit via other bus components. Avoid connecting a power source in
+reverse.
 
 ## Cabling and Termination
 
