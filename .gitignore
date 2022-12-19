@@ -1,6 +1,5 @@
 *.bak
 *-bak
-*.net
 *.pdf
 *.dtbo
 *.eep
@@ -8,3 +7,5 @@ hats/
 plot/
 *.png
 fp-info-cache
+fp-lib-table
+*-backups
