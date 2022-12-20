@@ -1,4 +1,4 @@
-# CAN HAT for Raspberry Pi 2/3+
+# CAN HAT for Raspberry Pi Zero
 
 Look! A hat! :tophat:
 
@@ -12,61 +12,49 @@ to supply the Pi with power and a pin header to access some GPIO lines.
 ### Mechanical
 
 The board outline and component placement conform to the [Micro HAT specification]
-and the [Add-On Boards and HATs] specification.
+and the [Add-On Boards and HATs] specification. It is designed to fit the
+Raspberry Pi Zero, but can also be mounted to other models. (Pi 2, 3, 4, ...)
 
-Instead of the usual DB9 connector found on many CAN interfaces, this one has
-screw terminals for easier wiring and a smaller footprint. There is a separate
-version in the db9 branch that includes two DB9 connectors instead. These
-can even be connected to the voltage regulator, if the Pi should be powered
-from the bus.
+Instead of the usual DB9 connector found on many CAN interface boards, the
+CAN HAT has terminal blocks for easier wiring and a smaller footprint.
 
-If you intend to adopt the CAN HAT in an industrial environment, replace the
-screw terminals with more robust connectors, or make sure the wires are firmly
-connected. You should also mount the HAT to the Raspberry Pi using spacers
-and M2.5 screws.
+For added stability, 11mm spacers should be mounted between the Pi and the HAT.
 
 ### Electronics
 
-The circuit is built around the Microchip MCP2515 CAN Interface Controller
-and a CAN transceiver IC. Since the Raspberry Pi and the controller are
-powered by 3.3V, you should use a CAN transceiver that works with 3.3V logic
-levels.
+The circuit is built around the Microchip MCP2515 CAN Interface Controller,
+connected to SPI port 0 on the Raspberry Pi, and a CAN transceiver IC.
 
 It is highly recommended to use a 5V CAN transceiver with a separate 3.3V
-input to drive the logic circuits. Texas Instruments SN65HVD541 is such a
-transceiver. To use it, solver a 0Ω resistor or wire into R7.
+input for the RX/TX pins, such as Texas Instruments SN65HVD541.
+When using a different transceiver without split voltage, the voltage inputs
+must be reconfigured through solder bridges JP3 and JP4.
 
-If you prefer to use a 3.3V transceiver instead, you don't need R7. See
-[Overview of 3.3V CAN Transceivers] for more information on 3.3V CAN bus
-operation.
+The SN65HVD541 also supports disabling the transceiver through pin 8.
+This pin is connected to ground via JP2 and 0Ω resistor R5 by default,
+which enables the transceiver at full speed. With JP2, it can be connected
+to Raspberry Pi pin GPIO22, which makes it controllable. Not that this is not
+supported by the MCP2515 device drivers and must be implemented manually.
+R5 is useful for transceivers that support slope control, but this is not
+available in the SN65HVD541.
 
-Some transceivers also support powering down the bus by pulling pin 5 low.
-If you solder a 0Ω resistor into R6 and leave out R7, you can control
-power to the bus via GPIO22. Note this may "abuse" the GPIO pin for
-powering some of the transceiver's logic, so make sure you do not exceed
-the maximum drive current of the GPIO pin.
-
-The MCP2515 is then connected to the SPI0 port on the Raspberry Pi header.
+See the section "Transceiver Configuration" below.
 
 To reduce interference on the CAN bus, tuned microstrips were used to
 connect the CAN transceiver to the terminals on the PCB. The differential
-impedance is matched to 60Ω. For added fun, the pair length is also matched,
-despite the comparatively low signal speed of the CAN bus (1MHz).
+impedance is matched to 60Ω. For added fun, the pair length is also matched
+with meanders.
 
-Aside from the CAN part, an additional ID EEPROM was added to conform to
-the HAT specification. JP1 is only needed to program the EEPROM. The part can
-be left out if desired, and the connection be made by other means.
-
-R5 controls the slope of the signals on the CAN bus. A 0Ω resistor should be
-soldered for maximum performance. Some transceivers use the pin for other
-purposes, refer to the respective data sheet if you don't use the
-recommended transceiver.
+Aside from the CAN interface part, an additional ID EEPROM ensures conformance
+with the HAT specification. JP1 is only needed to program the EEPROM. The part
+can be left out if desired, and the connection be made by other means, such as
+a screwdriver or a temporary solder bridge.
 
 The left side of the board is populated with a 6-24V to 5V step-down converter.
 If the Raspberry Pi is powered via USB, the components for this converter
 should not be soldered, or at least not be connected to a power source.
-
-:warning: **Do not connect a power source to both the Raspberry Pi and J5!**
+It's also possible to power the Rasberry Pi from a 5V source via this
+connector directly. See the section "Power Options" below.
 
 Note that the AP63205 regulator is rated for a maximum current of 2A.
 The [Add-On Boards and HATs] specification recommends at least 2.5A, but 2A
@@ -74,12 +62,46 @@ is normally sufficient unless a lot of peripherals and USB devices are used.
 The Raspberry Pi 3 and the CAN HAT will only draw a few hundred mA when using
 Ethernet and the CAN bus and no other external peripherals.
 
-It is also possible to power the 5V rail directly from the J5 connector.
-Solder a 0Ω jumper into R10 to achieve this and leave out F2, D7, U4, L1, C9,
-C10, C12 and C13. For additional voltage stability on the bus transceiver,
-C12 can be added if desired.
+Overvoltage protection is done through the TVS diode D1, but note it cannot
+handle overcurrent. The fuse may not react quickly enough if a large amount
+of energy is sent through D1, and it may still fail to protect the circuit.
 
-:warning: **Only solder R10 if you want to power the Raspbery Pi by J5 directly!**
+### Transceiver Configuration
+
+The recommended transceiver SN65HVDA541 has separate voltage inputs for
+the logic and the CAN transceiver. In the default configuration, the logic
+is connected to 3.3V and the transceiver to 5V.
+
+If transceiver power control should be possible from the Raspberry Pi,
+cut the solder bridge from JP2 (IOCTL) pins 1-2 and connect 2-3 instead.
+Note that this is not supported by the driver and must be implemented
+separately.
+
+For over transceivers, the 3.3V power supply should be disconnected by
+cutting JP3 (3VIO) and choosing an appropriate voltage on JP4 (VBUS).
+1-2 is 5V and 2-3 is 3.3V. Note that there is no input voltage protection
+on the MCP2515, which is powered from 3.3V. Choosing a 5V part may result
+in damage to the MCP2515.
+
+If the chosen transceiver supports slope control on pin 8, JP2 should be
+left in position 1-2 and the 0Ω resistor R5 should be replaced with an
+appropriate value. Refer to the transceiver's data sheet for more information.
+
+### Power Options
+
+:warning: **Do not connect a power source to both the Raspberry Pi and J5!**
+
+Power the Raspberry Pi and the CAN HAT is possible via different means.
+
+You can power the Raspberry Pi directly, for example via USB. In this case,
+it will provide both the 5V and 3.3V to the HAT. If this is the only
+power option you want to support, you can leave out the voltage regulator
+comprised by J5, F2, D1, D2, C9, U4, C10, L1, C12 and C13.
+
+It's also possible to connect the terminal block J5 to the 5V supply,
+bypassing the voltage regulator. Connect the solver bridge JP5 and leave out
+the voltage regulator as described before. Be careful not to send more
+than 5V to the Raspberry Pi or you will destroy it.
 
 When using the step-down converter, the input polarity is protected by D7.
 However, because the negative terminal is directly connected to the ground
@@ -193,7 +215,7 @@ This configures a line speed of 1MHz. Commonly supported rates are 125kHz or
 ## Legal
 
 This circuit, schematics, board layouts and accompanying documentation is
-Copyright © 2019-2020 by Gregor Riepl
+Copyright © 2019-2022 by Gregor Riepl
 
 You may use it under the terms of the CERN Open Hardware Licence, version v1.2.
 
