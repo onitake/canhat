@@ -5,7 +5,8 @@ Look! A hat! :tophat:
 This little board extends the Raspberry Pi with a CAN interface, a 5V regulator
 to supply the Pi with power and a pin header to access some GPIO lines.
 
-![canhat](https://user-images.githubusercontent.com/371687/87884297-e85cc180-ca0d-11ea-8d3f-9ff7ddcb1a1c.png)
+![canhat](https://github.com/onitake/canhat/assets/371687/27ac0d41-902f-49d6-9be3-aae559b2bb56)
+
 
 ## Specifications
 
@@ -89,25 +90,37 @@ appropriate value. Refer to the transceiver's data sheet for more information.
 
 ### Power Options
 
-:warning: **Do not connect a power source to both the Raspberry Pi and J5!**
+:warning: **Do not supply power to the Raspberry Pi and J5 at the same time!**
 
-Power the Raspberry Pi and the CAN HAT is possible via different means.
+The CAN hat can backpower the Raspberry Pi, but it can also be powered by it.
 
-You can power the Raspberry Pi directly, for example via USB. In this case,
-it will provide both the 5V and 3.3V to the HAT. If this is the only
-power option you want to support, you can leave out the voltage regulator
-comprised by J5, F2, D1, D2, C9, U4, C10, L1, C12 and C13.
+The following configurations are supported:
 
-It's also possible to connect the terminal block J5 to the 5V supply,
-bypassing the voltage regulator. Connect the solver bridge JP5 and leave out
-the voltage regulator as described before. Be careful not to send more
-than 5V to the Raspberry Pi or you will destroy it.
+#### All power on Raspberry Pi
 
-When using the step-down converter, the input polarity is protected by D7.
-However, because the negative terminal is directly connected to the ground
-plane and the CAN bus ground, polarity reversal may still lead to a
-short-circuit via other bus components. Avoid connecting a power source in
-reverse.
+If you're already powering the Raspberry Pi from a 5V source (such as USB),
+you don't need the regulator circuit on the CAN hat.
+
+Leave out the parts J5, F2, D1, D2, C9, U4, C10, L1, C12 and C13.
+
+#### 5V power on CAN hat
+
+In this configuration, 5V is delivered directly from the hat to the RPi.
+
+Leave out the parts F2, D1, D2, C9, U4, C10, L1, C12 and C13, but connect
+the solder bridge JP5.
+
+#### 12V power on CAN hat
+
+If you only have a 12V power source available, you can populate the step-down
+voltage regulator on the CAN hat, which will convert the input to 5V and feed
+it to the Raspberry Pi.
+
+Keep the solder bridge JP5 disconnected, or you may damage your Raspberry Pi!
+
+Input polarity reversal and overvoltage is protected by D2 and D1, but you
+should still make sure not to swap the polarity on the 12V input.
+Failure to do so could lead to a short-circuit via other bus components.
 
 ## Cabling and Termination
 
